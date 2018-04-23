@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Prince Benson Waimai</title>
+</head>
+<body>
+ 
+ <h1>Prince Benson Fusion Restaurant
+</h1>
+
+
+ <h2>Tasty Treats To Your Door</h2>
+ <!--Item 1-->
+ <p>chuan chuan 2rmb</p>
+ <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524456153072&di=af55ab87b11e346b389c3be6ccd8a1de&imgtype=0&src=http%3A%2F%2Fhao.qudao.com%2Fupload%2Farticle%2F20160617%2F33095445591466148486.jpg" >
+<br>
+<!--Item 2-->
+<p>cake 10rmb</p>
+<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4227654637,3474909706&fm=27&gp=0.jpg">
+
+<!--Item 3-->
+<p>cola  5rmb</p>
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524456967428&di=368cb5959d640b544a168d0c98646d97&imgtype=0&src=http%3A%2F%2Fimg1.gtimg.com%2Fsh%2Fpics%2Fhv1%2F51%2F1%2F1897%2F123352731.jpg">
+<!-- Order Form -->
+	<h2>Place your Order</h2>
+	<form action="{% url 'order_food:home_page' %}" method="POST">   
+		{% csrf_token %}	
+		<input type="text" name="food_name" placeholder="Please Type Which food You Want"><br>     
+		<textarea name="address" placeholder="Please Type Your Address"></textarea><br>      
+		<input type="submit" value="Place Your Order">
+	</form>
+
+	<!-- Show Order -->
+	<h1> Your Order:</h1>
+	<p> Food Ordered: {{foods}}</p>
+	<p> Delivery Address: {{address}}</p>
+
+</body>
+</html>
